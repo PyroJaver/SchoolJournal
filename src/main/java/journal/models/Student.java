@@ -24,6 +24,10 @@ public class Student implements Serializable {
     @Size (min = 2, max = 100)
     private String surname;
 
+    @Column (name = "diary_number")
+    @NotEmpty
+    private String diaryNumber;
+
     @OneToMany(mappedBy = "student")
     private List<Mark> marks;
 
@@ -59,5 +63,13 @@ public class Student implements Serializable {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public String getDiaryNumber() {
+        return diaryNumber;
+    }
+
+    public void setDiaryNumber(String diaryNumber) {
+        this.diaryNumber = diaryNumber;
     }
 }

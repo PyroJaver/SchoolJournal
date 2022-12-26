@@ -27,8 +27,8 @@ public class MarkValidator implements Validator {
     if (mark.getStudent()==null){
         return;
     }
-    if(studentService.findStudentById(mark.getStudent().getId()).getName().isEmpty()){
+  /*  if(studentService.findStudentById(mark.getStudent().getId()).getName().isEmpty()){
         errors.rejectValue("student", "Такого студента не существует");
-    }
+    }*/
     }
 }

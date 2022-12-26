@@ -29,13 +29,13 @@ public class MarkService {
         return markRepository.findAll();
     }
 
-    public List<Mark> findAllMarksOfStudent(String surname){
-        return markRepository.findMarksByStudent(studentService.findStudentBySurname(surname));
+    public List<Mark> findAllMarksOfStudent(String diaryNumber){
+        return markRepository.findMarksByStudent(studentService.findStudentByDiaryNumber(diaryNumber));
     }
 
-    public List<Mark> findSubjectMarksOfStudent(String surname, String subject){
+    public List<Mark> findSubjectMarksOfStudent(String diaryNumber, String subject){
         return markRepository.findMarksByStudentAndSubject(studentService
-                        .findStudentBySurname(surname), subject);
+                        .findStudentByDiaryNumber(diaryNumber), subject);
     }
 
     @Transactional

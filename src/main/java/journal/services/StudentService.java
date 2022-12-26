@@ -20,34 +20,39 @@ public class StudentService {
         this.modelMapper = modelMapper;
     }
 
-    @Transactional
-    public Student findStudentById(Long id){
+  /*  @Transactional
+    public Student findStudentById(Long id) {
         Optional<Student> student = studentRepository.findById(id);
-        if(student.isPresent()) {
+        if (student.isPresent()) {
             return student.get();
         } else return new Student();
-    }
+    }*/
 
     @Transactional
-    public List<Student> findAllStudents(){
+    public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }
 
     @Transactional
-    public void addStudent (Student student){
+    public void addStudent(Student student) {
         studentRepository.save(student);
     }
 
     @Transactional
-    public Student findStudentBySurname(String surname){
-         return studentRepository.findStudentBySurname(surname);
+    public Student findStudentBySurname(String surname) {
+        return studentRepository.findStudentBySurname(surname);
     }
 
-    public Student convertDTOtoStudent(StudentDTO studentDTO){
+    @Transactional
+    public Student findStudentByDiaryNumber(String diaryNumber){
+        return studentRepository.findStudentByDiaryNumber(diaryNumber);
+    }
+
+    public Student convertDTOtoStudent(StudentDTO studentDTO) {
         return modelMapper.map(studentDTO, Student.class);
     }
 
-    public  StudentDTO convertStudentToDTO(Student student){
+    public StudentDTO convertStudentToDTO(Student student) {
         return modelMapper.map(student, StudentDTO.class);
     }
 }

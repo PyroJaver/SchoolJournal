@@ -47,19 +47,19 @@ public class MarkController {
     }
 
     @GetMapping("/{student}")
-    public MarksResponse getAllMarksOfStudent(@PathVariable ("student") String student){
+    public MarksResponse getAllMarksOfStudent(@PathVariable ("student") String diaryNumber){
         MarksResponse marksResponse = new MarksResponse(markService
-                .findAllMarksOfStudent(student)
+                .findAllMarksOfStudent(diaryNumber)
                 .stream()
                 .map(markService::convertMarkToDTO)
                 .collect(Collectors.toList()));
         return marksResponse;
     }
     @GetMapping("/{student}/{subject}")
-    public MarksResponse getSubjectMarksOfStudent(@PathVariable ("student") String student,
+    public MarksResponse getSubjectMarksOfStudent(@PathVariable ("student") String diaryNumber,
                                                   @PathVariable String subject){
         MarksResponse marksResponse = new MarksResponse(markService
-                .findSubjectMarksOfStudent(student, subject)
+                .findSubjectMarksOfStudent(diaryNumber, subject)
                 .stream()
                 .map(markService::convertMarkToDTO)
                 .collect(Collectors.toList()));

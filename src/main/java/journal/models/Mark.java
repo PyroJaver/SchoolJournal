@@ -21,7 +21,7 @@ public class Mark {
     private int mark;
 
     @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "student", referencedColumnName = "surname")
+    @JoinColumn(name = "student", referencedColumnName = "diary_number")
     private Student student;
 
     @Column (name = "mark_date_and_time")
