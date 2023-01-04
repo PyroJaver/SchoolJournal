@@ -1,7 +1,5 @@
 package journal.dto;
 
-import journal.models.Mark;
-
 import java.util.List;
 
 public class MarksResponse {

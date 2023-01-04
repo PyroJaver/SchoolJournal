@@ -6,9 +6,7 @@ import journal.repositories.StudentRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -20,13 +18,6 @@ public class StudentService {
         this.modelMapper = modelMapper;
     }
 
-  /*  @Transactional
-    public Student findStudentById(Long id) {
-        Optional<Student> student = studentRepository.findById(id);
-        if (student.isPresent()) {
-            return student.get();
-        } else return new Student();
-    }*/
 
     @Transactional
     public List<Student> findAllStudents() {

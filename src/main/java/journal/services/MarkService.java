@@ -2,14 +2,10 @@ package journal.services;
 
 import journal.dto.MarkDTO;
 import journal.models.Mark;
-import journal.models.Student;
 import journal.repositories.MarkRepository;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 

@@ -35,7 +35,6 @@ public class MarkController {
         markValidator.validate(markToAdd, bindingResult);
         if(bindingResult.hasErrors())
             returnErrorsToClient(bindingResult);
-
         markService.addMark(markToAdd);
         return ResponseEntity.ok(HttpStatus.OK);
     }
