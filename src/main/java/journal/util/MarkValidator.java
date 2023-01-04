@@ -24,11 +24,11 @@ public class MarkValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
     Mark mark = (Mark) target;
-    if (mark.getStudent()==null){
-        return;
+    if (studentService.findStudentByDiaryNumber(mark.getStudent().getDiaryNumber())==null){
+        errors.rejectValue("student", "mark.error.student_not_found");
     }
-  /*  if(studentService.findStudentById(mark.getStudent().getId()).getName().isEmpty()){
-        errors.rejectValue("student", "Такого студента не существует");
-    }*/
+    if(mark.getMark()<1||mark.getMark()>5){
+        errors.rejectValue("mark", "mark.error.mark_not_in_range");
+    }
     }
 }
