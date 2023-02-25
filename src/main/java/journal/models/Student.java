@@ -72,4 +72,15 @@ public class Student implements Serializable {
     public void setDiaryNumber(String diaryNumber) {
         this.diaryNumber = diaryNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", diaryNumber='" + diaryNumber + '\'' +
+                ", marks=" + marks +
+                '}';
+    }
 }
